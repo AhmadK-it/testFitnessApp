@@ -1,6 +1,5 @@
 const express = require('express')
 const Router = express.Router()
-
 Router
 .route('/')
 .get((req,res)=>{
@@ -137,11 +136,7 @@ Router
 .route('/media')
 .get( (req,res)=>{
     try{
-            res.send({
-            "statusCode": 201,
-            "message": 'mehtod get',
-            "media": 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-gym-logo-png-image_2649975.jpg'
-        })
+        res.send('<img src="../public/assets/img1.jpg" alt="GYM img" style="width:500px; height:600px;">')
     }catch(e){
         console.log(e)
         res.json({
@@ -152,18 +147,14 @@ Router
 )
 .post((req,res)=>{
     console.log(req)
-     try{
-                res.send({
-                "statusCode": 201,
-                "message": 'mehtod get',
-                "media": 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-gym-logo-png-image_2649975.jpg'
-            })
-        }catch(e){
-            console.log(e)
-            res.json({
-                'msg':"didn't working"
-            })
-        }
+    try{
+        res.send('<img src="../public/assets/img1.jpg" alt="GYM img" style="width:500px; height:600px;">')
+    }catch(e){
+        console.log(e)
+        res.json({
+            'msg':"didn't working"
+        })
+    }
 
 })
 
