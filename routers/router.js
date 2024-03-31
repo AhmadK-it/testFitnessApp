@@ -133,4 +133,38 @@ Router
 
 })
 
+Router
+.route('/media')
+.get( (req,res)=>{
+    try{
+            res.send({
+            "statusCode": 201,
+            "message": 'mehtod get',
+            "media": 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-gym-logo-png-image_2649975.jpg'
+        })
+    }catch(e){
+        console.log(e)
+        res.json({
+            'msg':"didn't working"
+        })
+    }
+}
+)
+.post((req,res)=>{
+    console.log(req)
+     try{
+                res.send({
+                "statusCode": 201,
+                "message": 'mehtod get',
+                "media": 'https://png.pngtree.com/png-clipart/20190611/original/pngtree-gym-logo-png-image_2649975.jpg'
+            })
+        }catch(e){
+            console.log(e)
+            res.json({
+                'msg':"didn't working"
+            })
+        }
+
+})
+
 module.exports = Router
