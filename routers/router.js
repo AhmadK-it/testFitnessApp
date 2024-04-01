@@ -1,5 +1,6 @@
 const express = require('express')
 const Router = express.Router()
+
 Router
 .route('/')
 .get((req,res)=>{
@@ -61,15 +62,48 @@ Router
         "message": "test get",
         "error": false,
         "data":{
-            "name":"test",
-            "exercises":[
-                {
-                    'name':"ex1"
-                },
-                {
-                    'name':"ex2"
-                }
-            ]
+            "Group1" : {
+                "name":"Group1",
+                "exercises":[
+                    {
+                        'name':"ex1"
+                    },
+                    {
+                        'name':"ex2"
+                    }
+            ]}
+            ,
+            "Group2" : {
+                "name":"Group2",
+                "exercises":[
+                    {
+                        'name':"ex1"
+                    },
+                    {
+                        'name':"ex2"
+                    }
+                    ,
+                    {
+                        'name':"ex3"
+                    },
+                    {
+                        'name':"ex4"
+                    }
+            ]},
+            "Group3" : {
+                "name":"Group3",
+                "exercises":[
+                    {
+                        'name':"ex1"
+                    },
+                    {
+                        'name':"ex2"
+                    }
+                    ,
+                    {
+                        'name':"ex3"
+                    }
+            ]}
         }
     })
 
@@ -136,7 +170,7 @@ Router
 .route('/media')
 .get( (req,res)=>{
     try{
-        res.send('<img src="../public/assets/img1.jpg" alt="GYM img" style="width:500px; height:600px;">')
+        res.send('<img src="https://t3../public/assets/img1.jpg" alt="GYM img" style="width:500px; height:600px;">')
     }catch(e){
         console.log(e)
         res.json({
