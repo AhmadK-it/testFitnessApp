@@ -115,10 +115,12 @@ Router
                 "name":"Group1",
                 "exercises":[
                     {
-                        'name':"ex1"
+                        'name':exercises[0],
+                        'id': 1
                     },
                     {
-                        'name':"ex2"
+                        'name': exercises[1],
+                        'id': 2
                     }
             ]}
             ,
@@ -126,31 +128,38 @@ Router
                 "name":"Group2",
                 "exercises":[
                     {
-                        'name':"ex1"
+                        'name':exercises[0],
+                        'id': 1
                     },
                     {
-                        'name':"ex2"
+                        'name':exercises[1],
+                        'id': 2
                     }
                     ,
                     {
-                        'name':"ex3"
+                        'name':exercises[2],
+                        'id': 3
                     },
                     {
-                        'name':"ex4"
+                        'name':exercises[3],
+                        'id': 4
                     }
             ]},
             {
                 "name":"Group3",
                 "exercises":[
                     {
-                        'name':"ex1"
+                        'name':exercises[2],
+                        'id': 3
                     },
                     {
-                        'name':"ex2"
+                        'name':exercises[5],
+                        'id': 6
                     }
                     ,
                     {
-                        'name':"ex3"
+                        'name':exercises[3],
+                        'id': 4
                     }
             ]}
         ]
