@@ -61,8 +61,8 @@ Router
         "statusCode": 201,
         "message": "test get",
         "error": false,
-        "data":{
-            "Group1" : {
+        "data":[
+            {
                 "name":"Group1",
                 "exercises":[
                     {
@@ -73,7 +73,7 @@ Router
                     }
             ]}
             ,
-            "Group2" : {
+            {
                 "name":"Group2",
                 "exercises":[
                     {
@@ -90,7 +90,7 @@ Router
                         'name':"ex4"
                     }
             ]},
-            "Group3" : {
+            {
                 "name":"Group3",
                 "exercises":[
                     {
@@ -104,7 +104,8 @@ Router
                         'name':"ex3"
                     }
             ]}
-        }
+        ]
+        
     })
 
 })
