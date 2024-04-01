@@ -1,6 +1,32 @@
 const express = require('express')
 const Router = express.Router()
 
+const exercises = [
+    'squats',
+    'something',
+    'something else',
+    'last element', 
+    'do not push it too far', 
+    'one more and the server will return no data'
+]
+const instructions = [
+    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam modi eius quaerat.',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, possimus et! Quod aperiam vitae officia distinctio.',
+    'Lorem ipsum dolor sit amet.',
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam consectetur minus ipsum incidunt voluptas non! Iure ab ipsum nostrum nulla.',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, possimus et! Quod aperiam vitae officia distinctio.',
+    'Lorem ipsum dolor sit amet.'
+]
+
+const muscle = [
+    'muscle1',
+    'muscle2',
+    'muscle3',
+    'muscle4',
+    'muscle5',
+    'muscle6'
+]
+
 Router
 .route('/')
 .get((req,res)=>{
@@ -56,6 +82,29 @@ Router
 
 Router
 .route('/live')
+.get((req,res)=>{
+    res.json({
+        "statusCode": res.status(403),
+        "message": "test get",
+        "error": false,
+        "data":'stop using me | This is old | contact dev team plz'
+        
+    })
+
+})
+.post((req,res)=>{
+    res.json({
+        "statusCode": res.status(403),
+        "message": "test post",
+        "error": false,
+        "data":'stop using me | This is old | contact dev team plz'
+    })
+
+})
+
+
+Router
+.route('/exercises/list')
 .get((req,res)=>{
     res.json({
         "statusCode": 201,
@@ -130,18 +179,20 @@ Router
 })
 
 Router
-.route('/regester')
+.route('/exercises/details/:id')
 .get( (req,res)=>{
     try{
-            console.log(req)
+            console.log(req.params.id)
+            const Id = req.params.id - 1
             res.json({
             "statusCode": 201,
             "message": 'mehtod get',
             "error": false,
             "data":{
-                'username': req.body?.username,
-                'password': req.body?.password,
-                'email': req.body?.email,
+                "id": Id, 
+                "name": exercises[Id],
+                "instructions": instructions[Id],
+                "targetedMuscle": muscle[Id]
             }
         })
     }catch(e){
@@ -159,9 +210,10 @@ Router
         "message": 'method post',
         "error": false,
         "data":{
-            'username': req.body?.username,
-            'password': req.body?.password,
-            'email': req.body?.email
+                "id": req.params.id, 
+                "name": "squats",
+                "instructions": "bla bla bla.",
+                "targetedMuscle": "muscle "
         }
     })
 
@@ -171,7 +223,7 @@ Router
 .route('/media')
 .get( (req,res)=>{
     try{
-        res.send('<img src="https://t3../public/assets/img1.jpg" alt="GYM img" style="width:500px; height:600px;">')
+        res.send('<img src="../public/assets/img1.jpg" alt="GYM img" >')
     }catch(e){
         console.log(e)
         res.json({
@@ -183,7 +235,7 @@ Router
 .post((req,res)=>{
     console.log(req)
     try{
-        res.send('<img src="../public/assets/img1.jpg" alt="GYM img" style="width:500px; height:600px;">')
+        res.send('<img src="../img1.jpg" alt="GYM img" >')
     }catch(e){
         console.log(e)
         res.json({
